@@ -3,6 +3,7 @@ import {createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router';
 import Header from '../../components/Header';
+import { Link } from 'react-router-dom';
 
 function Signup() {
   const [email, setEmail] = useState('')
@@ -72,6 +73,9 @@ function Signup() {
           Create account
         </button>
         {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+      <div className="mt-6 text-center text-xs">
+        <p>Already have an account? <Link to="/signin" className="text-teal-600 hover:underline">Sign in</Link></p>
+      </div>
       </form>
     </div>
     </>

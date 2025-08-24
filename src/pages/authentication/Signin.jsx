@@ -3,6 +3,7 @@ import {signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router';
 import Header from '../../components/Header';
+import { Link } from 'react-router-dom';
 
 function Signin() {
   const [email, setEmail] = useState('')
@@ -72,6 +73,9 @@ function Signin() {
           Sign in
         </button>
         {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+        <div className="mt-6 text-center text-xs">
+          <p>Don't have an account? <Link to="/" className="text-teal-600 hover:underline">Sign up</Link></p>
+        </div>
       </form>
     </div>
     </>
