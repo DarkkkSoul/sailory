@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Home, Sparkles, Phone } from 'lucide-react'
+import { Home, Sparkles, Info } from 'lucide-react'
 
 function Navbar() {
   return (
@@ -31,13 +31,13 @@ function Navbar() {
           </li>
           <li>
             <NavLink
-              to="/contacts"
+              to="/about-us"
               className={({ isActive }) =>
                 `flex flex-col items-center text-xs ${isActive ? 'text-teal-700' : 'text-slate-600 hover:text-slate-800'}`
               }
             >
-              <Phone className="w-5 h-5" />
-              <span className="mt-0.5">Contacts</span>
+              <Info className="w-5 h-5" />
+              <span className="mt-0.5">About Us</span>
             </NavLink>
           </li>
         </ul>
