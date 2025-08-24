@@ -15,7 +15,7 @@ function Home() {
   const [tripType, setTripType] = useState('leisure')
   const [isFavourite, setIsFavourite] = useState(false);
   const [errorMessage, setErrorMessage] = useState('')
-  const [filter, setFilter] = useState('all'); // 'all' | 'favourite'
+  const [filter, setFilter] = useState('all');
   const [query, setQuery] = useState('');
 
   const handleSubmit = async (e) => {
@@ -77,7 +77,6 @@ function Home() {
     }
   }
 
-  // Derived list based on filter and search query
   const filteredItineraries = itineraries.filter((item) => {
     const tabOk = filter === 'all' ? true : !!item.isFavourite;
     const q = query.trim().toLowerCase();
@@ -93,7 +92,6 @@ function Home() {
     <div className="min-h-[100vh] bg-gradient-to-br from-slate-50 via-teal-50 to-sky-50 p-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {/* Left: Form */}
         <div className="bg-white/90 backdrop-blur rounded-xl shadow-lg border border-slate-100 p-6">
           <h2 className="text-2xl font-semibold text-slate-800 mb-1">Create itinerary</h2>
           <p className="text-slate-500 text-sm mb-6">Plan your trip details below.</p>
@@ -179,12 +177,10 @@ function Home() {
           </form>
         </div>
 
-        {/* Right: List */}
         <div className="bg-white/90 backdrop-blur rounded-xl shadow-lg border border-slate-100 p-6">
           <h2 className="text-2xl font-semibold text-slate-800 mb-1">Your itineraries</h2>
           <p className="text-slate-500 text-sm mb-4">All itineraries you create will appear here.</p>
 
-          {/* Small navbar controls */}
           <div className="mb-4 flex flex-col sm:flex-row sm:items-center gap-3">
             <div className="inline-flex rounded-lg border border-slate-200 overflow-hidden w-fit">
               <button
@@ -244,7 +240,7 @@ function Home() {
                     </div>
                     <div>
                       <Trash2 className='w-4 text-gray-600 cursor-pointer hover:text-red-400' onClick={()=>deleteItinerary(item.id)}/>
-                      {/* <Pencil className='w-4 text-gray-600 cursor-pointer hover:text-blue-400'/> */}
+                      
                     </div>
                   </div>
                 </li>

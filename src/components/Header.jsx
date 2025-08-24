@@ -13,7 +13,6 @@ function Header() {
                         </span>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-white/80">
-                        {/* Placeholder for future actions */}
                     </div>
                 </div>
             </div>

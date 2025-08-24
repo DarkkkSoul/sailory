@@ -26,7 +26,6 @@ function AboutUs() {
       <Header />
       <div className="min-h-[100vh] bg-gradient-to-br from-slate-50 via-teal-50 to-sky-50 p-6">
         <div className="max-w-5xl mx-auto">
-          {/* About */}
           <section className="bg-white/90 backdrop-blur rounded-xl shadow-lg border border-slate-100 p-6">
             <h1 className="text-3xl font-semibold text-slate-900">About Travel Tailor</h1>
             <p className="mt-3 text-slate-700 leading-relaxed">
@@ -64,7 +63,6 @@ function AboutUs() {
             </div>
           </section>
 
-          {/* Reviews */}
           <section className="mt-6 bg-white/90 backdrop-blur rounded-xl shadow-lg border border-slate-100 p-6">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-semibold text-slate-900">User Reviews</h2>

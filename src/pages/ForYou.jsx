@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar'
 import TravelCard from '../components/TravelCard'
 import Header from '../components/Header'
 
-// Sample destinations data. Update/extend as needed.
 const destinations = [
   {
     name: 'Kyoto',
