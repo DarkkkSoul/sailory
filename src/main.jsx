@@ -5,7 +5,7 @@ import Signup from './pages/authentication/Signup'
 import Home from './pages/Home'
 import Signin from './pages/authentication/Signin'
 import ForYou from './pages/ForYou'
-import Contacts from './pages/Contacts'
+import AboutUs from './pages/AboutUs'
 import './App.css'
 
 createRoot(document.getElementById('root')).render(
@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/signin" element={<Signin />} />
       <Route path="/home" element={<Home />} />
       <Route path="/for-you" element={<ForYou />} />
-      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/about-us" element={<AboutUs />} />
     </Routes>
   </BrowserRouter>
 )
