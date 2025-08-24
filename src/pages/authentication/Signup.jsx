@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import {signInWithEmailAndPassword} from 'firebase/auth';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router';
+import Header from '../../components/Header';
 
-function Signin() {
+function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
 
-  const handleSubmit = async  (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-        const userCreds = await signInWithEmailAndPassword(auth, email, password);
+        const userCreds = await createUserWithEmailAndPassword(auth, email, password);
         navigate('/home');
-        console.log('Sign in with:', userCreds.user.email);
+        console.log('Create account with:', userCreds.user.email);
     } catch (error) {
         setErrorMessage(error.message);
     }
@@ -28,13 +29,15 @@ function Signin() {
   }
 
   return (
+    <>
+    <Header />
     <div className="min-h-[100vh] w-full flex items-center justify-center bg-gradient-to-br from-slate-50 via-teal-50 to-sky-50 p-6">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white/90 backdrop-blur rounded-xl shadow-lg border border-slate-100 p-6"
       >
-        <h2 className="text-2xl font-semibold text-slate-800 mb-2">Sign in</h2>
-        <p className="text-slate-500 text-sm mb-6">Sign in with your email and password.</p>
+        <h2 className="text-2xl font-semibold text-slate-800 mb-2">Create account</h2>
+        <p className="text-slate-500 text-sm mb-6">Sign up with your email and a strong password.</p>
 
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="email" className="text-sm text-slate-600">Email</label>
@@ -66,12 +69,13 @@ function Signin() {
           type="submit"
           className="w-full py-2.5 rounded-lg font-semibold text-teal-900 border border-teal-300 bg-gradient-to-r from-teal-200 to-sky-200 hover:from-teal-300 hover:to-sky-300 active:from-teal-200 active:to-sky-200 transition shadow-sm"
         >
-          Sign in
+          Create account
         </button>
         {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
       </form>
     </div>
+    </>
   )
 }
 
-export default Signin
+export default Signup
